@@ -1,0 +1,33 @@
+---
+description: Webpack Transformer for Tailwind CSS
+tags: ['tailwind', 'css', 'transformer', 'webpack']
+---
+
+This Webpack transformer allows you to use Tailwind CSS in your Bit components.
+
+You can use a custom Tailwind configuration or inject the Tailwind CDN to load dynamic styles.
+
+## API
+
+```ts
+import { tailwindTransformer } from '@learnbit-react/tailwind.tailwind-transformer';
+
+tailwindTransformer({
+  config: {
+    theme: {
+      extend: {
+        colors: {
+          primary: '#ff0000',
+        },
+      },
+    },
+  },
+  // config: require.resolve('./tailwind.config.js'),
+  // cdn: true
+});
+```
+
+## Options
+
+- `config` - Tailwind config object or path to a config file
+- `cdn` - Injects the Tailwind CDN to the HTML to load dynamic styles
